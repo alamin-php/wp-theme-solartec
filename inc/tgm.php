@@ -35,6 +35,11 @@ function solartec_register_required_plugins() {
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
 		array(
+			'name'      => 'ACF Font Awesome ',
+			'slug'      => 'advanced-custom-fields-font-awesome',
+			'required'  => true,
+		),
+		array(
 			'name'      => 'Contact Form 7',
 			'slug'      => 'contact-form-7',
 			'required'  => true,

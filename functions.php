@@ -44,3 +44,81 @@ function solartec_assets() {
     wp_enqueue_script( 'main-js', get_theme_file_uri("assets/js/main.js"), array("jquery"), VERSION, true);
     }
 add_action( 'wp_enqueue_scripts', 'solartec_assets' );
+
+/**
+ * ACF Json Save
+ */
+
+function solartec_acf_json_save_point( $path ) {
+    $path = get_stylesheet_directory() . '/acf-json';
+    return $path;
+}
+add_filter('acf/settings/save_json', 'solartec_acf_json_save_point');
+/**
+ * ACF Json Load Locally
+ */
+function solartec_acf_json_load_point( $paths ) {
+    unset($paths[0]);
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+}
+add_filter('acf/settings/load_json', 'solartec_acf_json_load_point');
+/**
+ * ACF Pro Options page
+ */
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Top Header Settings',
+		'menu_title'	=> 'Top Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}
+
+/**
+ * Custom Post Type CPT
+ */
+
+function solartec_custom_post_type() {
+    register_post_type('slider',
+        array(
+            'labels'      => array(
+                'name'          => __('Sliders', 'solartec'),
+                'singular_name' => __('Slider', 'solartec'),
+            ),
+                'public'      => true,
+                'has_archive' => true,
+                'supports'    => array( 'title', 'editor', 'thumbnail', 'custom-field' ),
+        )
+    );
+    // Feature cpt 
+    register_post_type('feature',
+        array(
+            'labels'      => array(
+                'name'          => __('Features', 'solartec'),
+                'singular_name' => __('Feature', 'solartec'),
+            ),
+                'public'      => true,
+                'has_archive' => true,
+                'supports'    => array( 'title', 'editor', 'custom-field' ),
+        )
+    );
+}
+add_action('init', 'solartec_custom_post_type');
+
+remove_filter('the_content','wpautop');
