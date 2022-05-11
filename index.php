@@ -69,32 +69,51 @@
     </div>
     <?php endif; ?>
     <!-- Feature Start -->
-
+    <?php 
+        if(class_exists('ACF')){
+            $about_heading      = get_field('about_heading','option');
+            $about_sub_heading  = get_field('about_sub_heading', 'option');
+            $about_content      = get_field('about_content', 'option');
+            $about_content_tag  = get_field('about_content_tag', 'option');
+            $about_button_title = get_field('about_button_title', 'option');
+            $about_button_link  = get_field('about_button_link', 'option');
+            $about_image        = get_field('about_image', 'option');
+    ?>
     <!-- About Start -->
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="<?php echo get_template_directory_uri(  ); ?>/assets/img/about.jpg" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="<?php echo $about_image;?>" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
-                        <h6 class="text-primary">About Us</h6>
-                        <h1 class="mb-4">25+ Years Experience In Solar & Renewable Energy Industry</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Diam dolor diam ipsum</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Aliqu diam amet diam et eos</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
-                        <a href="" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Explore More</a>
+                        <?php if($about_sub_heading): ?>
+                        <h6 class="text-primary"><?php echo esc_html( $about_sub_heading ) ?></h6>
+                        <?php endif; ?>
+                        <?php if($about_sub_heading): ?>
+                        <h1 class="mb-4"><?php echo esc_html( $about_sub_heading ) ?></h1>
+                        <?php endif; ?>
+                        <?php if($about_content): ?>
+                        <p><?php echo esc_html( $about_content ) ?></p>
+                        <?php endif; ?>
+                        <?php if($about_content_tag) : ?>
+                            <?php foreach($about_content_tag as $about_tag) : ?>
+                                <p><i class="fa fa-check-circle text-primary me-3"></i><?php echo esc_html($about_tag['title']); ?></p>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                        <?php if($about_button_title) : ?>
+                        <a href="" class="btn btn-primary rounded-pill py-3 px-5 mt-3"><?php echo esc_html( $about_button_title ); ?></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php } ?>
     <!-- About End -->
-
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
