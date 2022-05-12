@@ -9,7 +9,7 @@ if(site_url() == "http://protheme.local.com/"){
 function solartec_theme_setup(){
     load_theme_textdomain( "stack", get_theme_file_path( "/languages" ));
     add_theme_support( "title-tag" );
-    add_theme_support( "post-thumbnails",array('post', 'slider') );
+    add_theme_support( "post-thumbnails",array('post', 'slider', 'service') );
     add_theme_support( "custom-logo" );
     add_theme_support( 'html5', array( 'comment-list', 'search-form') );
     add_editor_style( "/assets/css/editor-style.css" );
@@ -121,6 +121,18 @@ function solartec_custom_post_type() {
                 'public'      => true,
                 'has_archive' => true,
                 'supports'    => array( 'title', 'editor', 'custom-field' ),
+        )
+    );
+
+    register_post_type('service',
+        array(
+            'labels'      => array(
+                'name'          => __('Services', 'solartec'),
+                'singular_name' => __('Service', 'solartec'),
+            ),
+                'public'      => true,
+                'has_archive' => true,
+                'supports'    => array( 'title', 'editor', 'thumbnail', 'custom-field' ),
         )
     );
 }
