@@ -1,12 +1,12 @@
 {
-    "key": "group_627b63d486393",
-    "title": "Feature",
+    "key": "group_627f7ee306e9e",
+    "title": "Feature Options",
     "fields": [
         {
-            "key": "field_627f7d5e1413b",
-            "label": "Feature1",
-            "name": "",
-            "type": "tab",
+            "key": "field_627f7eec03669",
+            "label": "Sub Title",
+            "name": "sub_title",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,61 +15,17 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_627b63da5eb4c",
-            "label": "Feature Icon",
-            "name": "feature_icon",
-            "type": "font-awesome",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "icon_sets": [
-                "custom"
-            ],
-            "custom_icon_set": "",
-            "default_label": "",
-            "default_value": "",
-            "save_format": "class",
-            "allow_null": 0,
-            "show_preview": 1,
-            "enqueue_fa": 0,
-            "fa_live_preview": "",
-            "choices": []
-        },
-        {
-            "key": "field_627b63ed5eb4d",
-            "label": "Feature Number",
-            "name": "feature_number",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 4234,
+            "default_value": "Why Choose Us!",
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "maxlength": ""
         },
         {
-            "key": "field_627f7d721413c",
-            "label": "Feature2",
-            "name": "",
-            "type": "tab",
+            "key": "field_627f7f170366a",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -78,13 +34,35 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
+            "default_value": "Complete Commercial & Residential Solar Systems",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_627f7d831413d",
-            "label": "Feature Item",
-            "name": "feature_item",
+            "key": "field_627f7f300366b",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_627f7f4e0366c",
+            "label": "Feature Items",
+            "name": "feature_items",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -94,14 +72,52 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_627f7dc514140",
+            "collapsed": "field_627f7f7e0366e",
             "min": 0,
             "max": 0,
             "layout": "table",
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_627f7da81413e",
+                    "key": "field_627f7f690366d",
+                    "label": "Sub Title",
+                    "name": "sub_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_627f7f7e0366e",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_627f7f8d0366f",
                     "label": "Icon",
                     "name": "icon",
                     "type": "font-awesome",
@@ -127,49 +143,11 @@
                     "enqueue_fa": 0,
                     "fa_live_preview": "",
                     "choices": []
-                },
-                {
-                    "key": "field_627f7db81413f",
-                    "label": "Sub Title",
-                    "name": "sub_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_627f7dc514140",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 }
             ]
         },
         {
-            "key": "field_627f7dd914141",
+            "key": "field_627f7fa503670",
             "label": "Feature Image",
             "name": "feature_image",
             "type": "image",
@@ -196,9 +174,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "options_page",
                 "operator": "==",
-                "value": "feature"
+                "value": "acf-options-feature-option"
             }
         ]
     ],
@@ -210,5 +188,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1652522479
+    "modified": 1652522987
 }
